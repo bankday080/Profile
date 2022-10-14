@@ -7,13 +7,26 @@ const PORT = process.env.PORT;
 const path = require('path');
 
 app.use(morgan('combined'));
+
 app.use(express.static(path.join(__dirname,"/public/")));
 
-app.get("/", (req,res) =>{
+// app.use(function(err, req, res, next) {
+//     res.status(err.status || 500);
+//     next(err);
+//     res.render('error', {
+//         message: err.message,
+//         error: {}
+//     });
+// });
 
-    res.send('Hi... Bank');
+app.set("views", "./src/viwes");
+app.set("view engine", "ejs");
 
-})
+app.get("/",  (req,res) => {
+
+    res.render('index');
+
+});
 
 app.listen(PORT, ()=>{
     debug("Listening on PORT"+ chalk.red(" : "+PORT));
