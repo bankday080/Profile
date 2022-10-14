@@ -12,8 +12,8 @@
   "keywords": [],
   "description": "",
   "dependencies": {
-    "chalk": "^5.1.2",
-    "debug": "^4.3.4",
+    "chalk": "^4.1.2",
+    "debug": "^4.3.2",
     "express": "^4.17.1",
     "faker": "^6.6.6",
     "firebase-admin": "^11.1.0",
@@ -22,5 +22,12 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "delay": 2000,
+    "env": {
+      "PORT": 3020
+    }
   }
 }

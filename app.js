@@ -3,10 +3,10 @@
 // + chalk.red(" : "+port)
 
 const express = require('express');
-// const chalk = require('chalk');
-// const debug = require('debug')('app');
+const chalk = require('chalk');
+const debug = require('debug')('app');
 const app = express();
-const port = 3020;
+const PORT = process.env.PORT;
 const path = require('path')
 
 app.use(express.static(path.join(__dirname,"/public/")));
@@ -17,6 +17,6 @@ app.get("/", (req,res) =>{
 
 })
 
-app.listen(port, ()=>{
-    console.log("Listening on port");
+app.listen(PORT, ()=>{
+    console.log("Listening on PORT"+ chalk.red(" : "+PORT));
 })
